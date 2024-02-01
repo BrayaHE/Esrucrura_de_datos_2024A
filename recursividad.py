@@ -18,7 +18,7 @@ def fibonacci(n):
          fi_lista = fibonacci(n-1) 
          #Usamos el comando append para agregar el elemento final de la lista para hacer la sucesion de fibonacci
          fi_lista.append(fi_lista[-1] + fi_lista[-2])
-         #Con la funcion return  retor namos la secuencia en la lista
+         #Con la funcion return  retornamos la secuencia en la lista
          return fi_lista
 #Usamos el comando print para que imprima la sucecion fibonacci dentro de la lista 
 print(fibonacci(30))
