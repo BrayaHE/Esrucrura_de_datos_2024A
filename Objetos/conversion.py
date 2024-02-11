@@ -1,19 +1,19 @@
 #import Nodo
 '''Implementador'''        
 '''CON IF '''  
-from Nodo import Nodo
-e = [1, 2, 3, 4, 5]
-i=0
-if __name__ == '__main__':
-    head = Nodo()
-    curr = head
-    for i in e:
-        curr.val = i
-        curr.next = Nodo()
-        curr = curr.next          
-    while head:
-        print(head)
-        head = head.next
+# from Nodo import Nodo
+# e = [1, 2, 3, 4, 5]
+# i=0
+# if __name__ == '__main__':
+#     head = Nodo()
+#     curr = head
+#     for i in e:
+#         curr.val = i
+#         curr.next = Nodo()
+#         curr = curr.next      
+#     while head:
+#         print(head)
+#         head = head.next
         
 '''Codigo en clase  while'''
 # from Nodo import Nodo
@@ -29,11 +29,44 @@ if __name__ == '__main__':
 #         curr.next = Nodo()
 #         curr = curr.next
 #         i += 1   
-
 #     temp = head
 #     while temp:
 #         print(temp)
 #         temp = temp.next
+
+
+
+'''Listas ligadas cirulares'''
+from Nodo import Nodo
+e = [1, 2, 3, 4, 5]
+i=0
+if __name__ == '__main__':
+    head = Nodo()
+    curr = head
+    for i in e:
+        curr.val = i
+        curr.next = Nodo()
+        curr = curr.next 
+        
+        curr.next=head 
+        
+    curr = head
+    for _ in range(len(e)):
+        print(curr.val)
+        curr = curr.next        
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
