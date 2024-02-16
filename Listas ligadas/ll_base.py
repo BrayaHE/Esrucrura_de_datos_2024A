@@ -11,7 +11,12 @@ class LinkedList:
     def headInsert(self, val) -> None:
         ''' Insertar elemento al inicio de la lista '''
         nuevo_nodo = Node(val)
+        nuevo_nodo.next = self.head
         self.head = nuevo_nodo
+        
+        if (not self.counter):
+            self.tail = self.head
+        
         self.counter += 1
         
     def tailInsert(self, val) -> None:
@@ -63,19 +68,23 @@ if __name__ == '__main__':
         lista_ligada.tailInsert(i)
    
     # Impresión de la lista
+    print('Impresión #1')
     lista_ligada.traverse()    
 
     # Adición de un nuevo elemento al final
+    print('\nImpresión #2')
     n = False
     lista_ligada.tailInsert(n)
     lista_ligada.traverse()
 
     # Adición de un nuevo elemento al inicio
+    print('\nImpresión #3')
     n = 'Estructuras'
     lista_ligada.headInsert(n)
     lista_ligada.traverse()
 
     # Eliminación del primer elemento e impresión
+    print('\nImpresión #4')
     lista_ligada.headRemove()
     lista_ligada.traverse()
  
@@ -84,4 +93,5 @@ if __name__ == '__main__':
     Solo se puede eliminar el ultimo elemento si la lista ligada es doblemente ligada, es decir, cada nodo tiene una referencia al nodo anterior y al siguiente. 
     Si la lista ligada es simplemente ligada, cada nodo solo tiene una referencia al siguiente nodo.
     '''
+    
     
