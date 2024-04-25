@@ -14,7 +14,7 @@ class Stack:
         self.__data = ListaDinamica()
     
     def __len__(self) -> int:
-        ''' Regresa el número de elementos dentro del stack '''
+        ''' Regresa el numero de elementos dentro del stack '''
         return len(self.__data)
     
     def __str__(self) -> str:
@@ -22,7 +22,7 @@ class Stack:
         return str(self.__data)
 
     def is_empty(self) -> bool:
-        ''' Indica si el stack está vacío '''
+        ''' Indica si el stack esta vacio '''
         return self.__len__() == 0
     
     def push(self, e) -> None:
@@ -34,7 +34,7 @@ class Stack:
         ''' Regresa el elemento hasta el tope del stack sin eliminarlo '''
         # Regresa el elemento en la parte superior de la pila
         if self.is_empty():
-            raise EmptyStack('El stack está vacío')
+            raise EmptyStack('El stack esta vacio')
         
         return self.__data[-1]
 
@@ -46,27 +46,27 @@ class Stack:
         
         return self.__data.pop()
 
-# Función para verificar si una cadena está balanceada con paréntesis, llaves y corchetes
+# Funcion para verificar si una cadena está balanceada con parentesis, llaves y corchetes
 def balanceada(s: str) -> bool:
     # Crea una instancia de la clase Stack
     stack = Stack()
-    # Define los caracteres de apertura y cierre para paréntesis, llaves y corchetes
+    # Define los caracteres de apertura y cierre para parentesis, llaves y corchetes
     abre = "({["
     cierra = ")}]"
-    # Itera sobre cada carácter en la cadena s
+    # Itera sobre cada caracter en la cadena s
     for char in s:
-        # Si el carácter es de apertura, lo agrega al stack
+        # Si el caracter es de apertura, lo agrega al stack
         if char in abre:
             stack.push(char)
-        # Si el carácter es de cierre
+        # Si el caracter es de cierre
         elif char in cierra:
-            # Si el stack está vacío, la cadena está desbalanceada
+            # Si el stack está vacio, la cadena está desbalanceada
             if stack.is_empty():
                 return False
-            # Si el último carácter abierto en el stack no coincide con el tipo de cierre, la cadena está desbalanceada
+            # Si el ultimo carácter abierto en el stack no coincide con el tipo de cierre, la cadena esta desbalanceada
             if abre.index(stack.pop()) != cierra.index(char):
                 return False
-    # Si el stack está vacío al final, la cadena está balanceada
+    # Si el stack esta vacío al final, la cadena esta balanceada
     return stack.is_empty()
 
 # Casos de prueba
@@ -82,7 +82,7 @@ test_cases = [
     "[e,s,t,r,u,c,t,u,r,a,(d,e[da,to,s])]"
 ]
 
-# Itera sobre cada caso de prueba e imprime si está correcto o incorrecto
+# Itera sobre cada caso de prueba e imprime si esta correcto o incorrecto
 for case in test_cases:
     print(f"{case} -> {'Correcta' if balanceada(case) else 'Incorrecta'}")
 
